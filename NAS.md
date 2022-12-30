@@ -66,3 +66,47 @@ mount -t nfs 172.27.128.1:mountpath01 /root
 
 꼭 디렉토리를 하나 생성해서 마운트 시켜주자.
 ```
+
+# NAS - Window 연동
+
+![install01](./img/NAS/NAS06.png)
+
+```
+ 윈도우 서버 생성
+```
+
+![install01](./img/NAS/NAS07.png)
+
+```
+ 생성된 서버 네트워크 연결.
+```
+
+![install01](./img/NAS/NAS08.png)
+
+```
+ 네트워크 방화벽에서 3389 포트 등록, 윈도우 원격 데스크톱 연결을 위해선 3389번 포트가 허용되어 있어야 한다.
+
+ 이때 내 컴퓨터의 공인 IP를 넣어줄 것.
+```
+
+![install01](./img/NAS/NAS09.png)
+
+![install01](./img/NAS/NAS10.png)
+
+![install01](./img/NAS/NAS11.png)
+
+```
+ IP 입력 - 사용자 입력(Administrator) - 비밀번호 입력(서버가 생성 될 때 부여 된 비밀번호)
+```
+
+![install01](./img/NAS/NAS12.png)
+
+```
+ 윈도우 서버에 접속 - 내 PC - 네트워크 드라이브 연결 - \\NAS(CIFS)아이피 주소\mountpath 입력.
+```
+
+![install01](./img/NAS/NAS13.png)
+
+```
+ 연결 확인.
+```
