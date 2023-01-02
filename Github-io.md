@@ -73,3 +73,39 @@
 
 # Github.io theme
 
+ ![install01](./img/Github-io/io14.png)
+
+```
+ 원하는 Io theme 서치.
+
+ 구글에 무료 테마를 검색해서 jekyll-theme-chirpy라는 마음에 드는 테마를 발견.
+
+ Zip 다운로드 - 압축 해제 - 해제한 파일을 통째로 [내 아이디].github.io 레포지터리에 붙여넣기.
+
+ 이때 겹치는 파일들은 전부다 덮어쓰기를 진행
+```
+
+ ![install01](./img/Github-io/io15.png)
+
+ ![install01](./img/Github-io/io16.png)
+
+ ```
+ bundle exec jekyll s
+
+ 명령어를 입력해서 실행, 실행 시 나오는 주소를 입력해서 페이지가 제대로 출력되는지 확인
+ ```
+
+ ![install01](./img/Github-io/io17.png)
+
+  ```
+ 내 로컬에서 업로드가 제대로 되는걸 확인 했다면 익숙한 절차를 다시 한 번 진행.
+
+ git add - commint - push
+  ```
+
+ ![install01](./img/Github-io/io18.png)
+
+ ```
+ 그 전에 꼭 _config.yaml에 url을 설정해주자.
+ ```
+
