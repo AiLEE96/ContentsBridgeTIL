@@ -5,10 +5,14 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sample.stomp.model.ChatRoom;
+import com.sample.stomp.entity.repository;
+import com.sample.stomp.entity.Member;
 
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
@@ -18,6 +22,16 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RequiredArgsConstructor
 public class ChatService {
+    @Autowired
+    repository memberRepository;
+
+    public void save(Member member) {
+        memberRepository.save(member);
+    }
+    
+    public Optional<Member> findById(String id) {
+        return memberRepository.findById(id);
+    }
 
     private Map<String, ChatRoom> chatRooms;
 
@@ -37,9 +51,9 @@ public class ChatService {
     }
 
     //채팅방 하나 불러오기
-    public ChatRoom findById(String roomId) {
+    /*public ChatRoom findById(String roomId) {
         return chatRooms.get(roomId);
-    }
+    }*/
 
     //채팅방 생성
     public ChatRoom createRoom(String name) {
