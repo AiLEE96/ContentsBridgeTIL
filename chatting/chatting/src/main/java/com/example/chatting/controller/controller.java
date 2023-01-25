@@ -17,7 +17,9 @@ import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class controller {
+	@Autowired 
     private service test;
+	//의존성 주입 필요, @@Service, @Repository, @Component spring container가 관리하는 bean객체. new를 사용할 일이 있다면 필히 @Autowired로 의존성 주입. 
 
 	@Autowired
 	service memberService;

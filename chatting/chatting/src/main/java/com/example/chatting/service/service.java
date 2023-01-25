@@ -26,7 +26,7 @@ public class service {
     public Optional<Member> findById(String id) {
         return memberRepository.findById(id);
     }
-
+    
     private Map<String, ChatRoom> chatRooms;
 
     @PostConstruct
@@ -52,8 +52,9 @@ public class service {
         return chatRoom;
     }
 
-     //채팅방 하나 불러오기
-    /*public ChatRoom findById(String roomId) {
+      //채팅방 하나 불러오기
+    public ChatRoom findByRoomId(String roomId) {
         return chatRooms.get(roomId);
-    }*/
+    }
+    
 }
