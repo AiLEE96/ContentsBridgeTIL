@@ -1,5 +1,9 @@
 package com.example.chatting.service;
 
+import com.example.chatting.entity.Member;
+import com.example.chatting.model.ChatRoom;
+import com.example.chatting.repository.repository;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -9,11 +13,9 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.example.chatting.entity.Member;
-import com.example.chatting.model.ChatRoom;
-import com.example.chatting.repository.repository;
 
 import jakarta.annotation.PostConstruct;
+
 @Service
 public class service {
     @Autowired

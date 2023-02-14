@@ -1,23 +1,28 @@
 package com.example.chatting.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
-import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
-import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
-
-import com.example.chatting.handler.handler;
+import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
+import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 
 @Configuration
 @EnableWebSocket
-public class config implements WebSocketConfigurer {
-
-	@Autowired
-	handler chatHandler;
+public class config implements WebSocketMessageBrokerConfigurer  {
 
 	@Override
-	public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
+    public void registerStompEndpoints(StompEndpointRegistry registry) {
+        // stomp 접속 주소 url => /ws-stomp
+        registry.addEndpoint("/ws-stomp") // 연결될 엔드포인트
+                .withSockJS(); // SocketJS 를 연결한다는 설정
+    }
 
-		registry.addHandler(chatHandler, "ws/chat").setAllowedOrigins("*");
-	}
+    @Override
+    public void configureMessageBroker(MessageBrokerRegistry registry) {
+        // 메시지를 구독하는 요청 url => 즉 메시지 받을 때
+        registry.enableSimpleBroker("/sub");
+
+        // 메시지를 발행하는 요청 url => 즉 메시지 보낼 때
+        registry.setApplicationDestinationPrefixes("/pub");
+    }
 }
